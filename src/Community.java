@@ -18,7 +18,7 @@ public class Community
 	{
 		Forum myForum = new Forum();
 		myForum.setTitle("Community Forum");
-		myForum.setSize(750, 275);
+		myForum.setSize(750, 550);
 		myForum.setLocationRelativeTo(null);
 		myForum.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myForum.setVisible(true);
