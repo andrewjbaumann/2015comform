@@ -44,7 +44,7 @@ public class Forum extends JFrame
 		
 		try
 		{
-			myPicture = ImageIO.read(new File("socialgoodhacks.png"));
+			myPicture = ImageIO.read(new File("socialgoodhacks2.jpg"));
 		}
 		catch(IOException e)
 		{
@@ -61,7 +61,7 @@ public class Forum extends JFrame
 		
 		postSuggestion = new JButton("Post Suggestion");
 		readSuggestion = new JButton("Read Suggestions");
-		commentSuggestion = new JButton("Comment on a suggestion");
+		commentSuggestion = new JButton("Comment on a Suggestion");
 		
 		inputPanel.add(postSuggestion);
 		inputPanel.add(readSuggestion);
@@ -106,16 +106,17 @@ public class Forum extends JFrame
 				int value = suggestionList.getSelectedIndex();
 				int messageType = JOptionPane.INFORMATION_MESSAGE;
 				
-				String displayMessage ="";
-				
-				for(String s:communityForum.get(value).getComments())
-				{
-					displayMessage += s + "\n";	
-				}
-
+				String displayMessage = "\n";
+				int myint = 1;
 				if(value >= 0)
 				{
-					JOptionPane.showMessageDialog(null, communityForum.get(value).getSuggestion() + " :" + displayMessage);
+					for(String s:communityForum.get(value).getComments())
+					{
+						displayMessage += "     " + myint + ") " + s + "\n";	
+						myint++;
+					}
+					
+					JOptionPane.showMessageDialog(null, "Suggestion: " + communityForum.get(value).getSuggestion() + "\nComments:" + displayMessage);
 				}
 			}
 			
